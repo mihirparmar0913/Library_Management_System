@@ -24,6 +24,27 @@ class Library:
        # Here we are Checking for duplicate ISBN
        if any(b["isbn"] == book["isbn"] for b in self.books):
             return False, "ISBN already exists."
+       # Here we are making this book available as it is just added
+       book["available"] = True
        self.books.append(book)  
-       return True,"Book added successfully." 
+       return True,"Book added successfully."
+
+    def view_book(self):
+         if len(self.books)==0:
+              return False ,"Currently no book available"
+         return self.books,"Book is available"
+    
+    def borrow_book(self, isbn):
+        for book in self.books:
+            if book["isbn"] == isbn:
+                # Here will check book is available or not
+                if not book["available"]:
+                    return False, "Book is already borrowed."
+                # Mark this book as not availbale
+                book["available"] = False
+                return True, "Book borrowed successfully."
+
+        return False, "Book not found."
+     
+     
     

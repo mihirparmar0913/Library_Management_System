@@ -1,7 +1,7 @@
 import unittest
 from library import Library  
 
-class TestLibrary(unittest.TestCase):
+class TestAddBook(unittest.TestCase):
     def setUp(self):
         self.library = Library()  
       
@@ -60,6 +60,9 @@ class TestLibrary(unittest.TestCase):
         result2, message = self.library.add_book(book2)
         self.assertTrue(result1)
         self.assertFalse(result2)
-        self.assertEqual(message, "ISBN already exists.")  
+        self.assertEqual(message, "ISBN already exists.") 
+
+    
+
 if __name__ == "__main__":  
     unittest.main()
