@@ -7,20 +7,20 @@ class TestBorrowBook(unittest.TestCase):
 
         book ={
                 "isbn": "1234567890",
-                "title": "Mystic India",
-                "author": "swami harischandra",
-                "publication_year": 1925,
+                "title": "Namste India",
+                "author": "swami keshavdas",
+                "publication_year": 1995,
               }
         book1 = {
                 "isbn": "2341576890",
-                "title": "Satya na prayogo",
-                "author": "Mahatma Gandhi",
+                "title": "Lords of ring",
+                "author": "lord petricks",
                 "publication_year": 1949,
               }
         book2 = {
                 "isbn": "2341576897", 
-                "title": "The Great India",
-                "author": "Mahat",
+                "title": " shikshapatri",
+                "author": "Mahant",
                 "publication_year": 1960,
               }
         self.library.add_book(book)

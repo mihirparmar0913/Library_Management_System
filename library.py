@@ -45,6 +45,18 @@ class Library:
                 return True, "Book borrowed successfully."
 
         return False, "Book not found."
-     
-     
     
+     #This function is responsible for return book.
+    def return_book(self, isbn):
+        for book in self.books:
+            if book["isbn"] == isbn:
+                if book["available"]:
+                    return False, "Book is not borrowed."
+                book["available"] = True
+                return True, "Book returned successfully."
+
+        return False, "Book not found."
+     
+    def view_available_books(self):
+        # we are returnig the only books which are "available" is True
+        return [book for book in self.books if book["available"]]
